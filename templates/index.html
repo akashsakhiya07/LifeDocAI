@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LifeDoc AI - Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>🧠 LifeDoc AI - Submit Your Info</h2>
+        <form method="POST" action="/submit" enctype="multipart/form-data">
+
+            <div>
+                <label for="photo">Upload Photo:</label>
+                <input type="file" name="photo" id="photo" accept="image/*">
+            </div>
+
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Phone:</label>
+            <input type="tel" name="phone" required>
+
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" required>
+
+            <label>Aadhaar Number:</label>
+            <input type="text" name="aadhaar" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

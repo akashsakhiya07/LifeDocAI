@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Success - LifeDoc AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h2>Form Submitted Successfully!</h2>
+    <p>Thanks for submitting your LifeDoc form.</p>
+
+    <a href="{{ url_for('download', user_id=user_id) }}">Download PDF</a><br>
+    <a href="{{ preview_url }}">Preview PDF</a><br>
+
+    {% if photo_filename %}
+        <h3>Your Uploaded Photo:</h3>
+        <img src="{{ url_for('uploaded_photo', filename=photo_filename) }}" alt="Uploaded Photo" width="150">
+    {% endif %}
+
+    <br><br>
+    <!-- 🛠️ Edit Details Button -->
+    <a href="{{ url_for('edit_user', user_id=user_id) }}">
+        <button style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px;">
+            Edit Your Details
+        </button>
+    </a>
+
+</body>
+
+</html>
