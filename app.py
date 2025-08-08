@@ -6,7 +6,7 @@ import os
 import csv
 
 app = Flask(__name__)
-app.secret_key = 'Password123'  # Change this to a secure key in production
+app.secret_key = 'Set your own secure key'  # Change this to a secure key in production
 
 # Config
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
@@ -113,7 +113,7 @@ Aadhaar: {user.aadhaar}
     return render_template('success.html', user_id=user.id, preview_url=url_for('preview', user_id=user.id), photo_filename=photo_filename)
 
 # 🔒 Admin Login
-ADMIN_CODE = 'password123'  # Change this to a secure code in production
+ADMIN_CODE = 'Set your own secure key'  # Change this to a secure code in production
 
 @app.route('/admin_login', methods=['GET', 'POST'])
 def admin_login():
